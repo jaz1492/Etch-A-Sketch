@@ -23,6 +23,8 @@
     -create an erase and reset function
 */
 const grid = document.querySelector('.grid');
+let currentColor = "red"
+
 const gridCreator = function(numOfBoxes,classTarget){
     for(let i = 0; i<numOfBoxes;i++){
         const newCol = document.createElement('div');
@@ -41,7 +43,10 @@ const createBox = function(str='0',classTarget){
     newDiv.classList.add("grid-block",`${str}`);
     document.querySelector('.'+classTarget).appendChild(newDiv);
 }
+const setColor = function(event){
+    console.log(event);
+}
 const changeColor = function(event){
-    document.querySelector('.'+event.target.classList[1]).style.backgroundColor="red"
+    document.querySelector('.'+event.target.classList[1]).style.backgroundColor=currentColor
 }
 gridCreator(16,'grid');

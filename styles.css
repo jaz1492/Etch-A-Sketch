@@ -10,6 +10,13 @@ body{
 .tools-container{
     flex-flow: column;
 }
+.palette-container{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
 .grid-creator{
     display: inline;
 }
@@ -19,9 +26,7 @@ body{
     flex: 1 0 50%;
     border: 1px solid blue;
 }
-footer{
-    background-color: #0b6e4f;
-}
+
 .flex{
     display: flex;
 }
@@ -35,4 +40,9 @@ footer{
 .grid-row{
     width: 100%;
 }
-
+.palette-btn{
+    margin: 4px;
+}
+footer{
+    background-color: #0b6e4f;
+}

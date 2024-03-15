@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    text-align: center;
+}
+.app-container{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+.tools-container{
+    flex-flow: column;
+}
+.grid-creator{
+    display: inline;
+}
+.grid{
+    min-height: 40vw;
+    min-width: 40vw;
+    flex: 1 0 50%;
+    border: 1px solid blue;
+}
+footer{
+    background-color: #0b6e4f;
+}
+.flex{
+    display: flex;
+}
+

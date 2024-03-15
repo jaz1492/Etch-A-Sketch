@@ -14,8 +14,8 @@ body{
     display: inline;
 }
 .grid{
-    min-height: 40vw;
-    min-width: 40vw;
+    max-height: 380px;
+    max-width: 380px;
     flex: 1 0 50%;
     border: 1px solid blue;
 }
@@ -24,5 +24,15 @@ footer{
 }
 .flex{
     display: flex;
+}
+.grid-block{
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+}
+.grid-row{
+    width: 100%;
 }
 

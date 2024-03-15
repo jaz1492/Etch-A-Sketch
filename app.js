@@ -24,18 +24,24 @@
 */
 const grid = document.querySelector('.grid');
 const gridCreator = function(numOfBoxes,classTarget){
-    for(let i = 1; i<=numOfBoxes;i++){
+    for(let i = 0; i<numOfBoxes;i++){
         const newCol = document.createElement('div');
         newCol.classList.add(`column-${i.toString()}`);
         grid.appendChild(newCol);
         for(let n = 1; n<=numOfBoxes;n++){
-            createDiv(`box-${n.toString()}`,`column-${i.toString()}`);
+            // multiply the num to current column number then add the current created box to get its unique num 
+            const uniqueNum = (i * numOfBoxes) + n; 
+            createBox(`box-${uniqueNum.toString()}`,`column-${i.toString()}`);
         }
     }
 }
-const createDiv = function(str='0',classTarget){
+const createBox = function(str='0',classTarget){
     const newDiv = document.createElement("div");
+    newDiv.addEventListener("mouseover",changeColor);
     newDiv.classList.add("grid-block",`${str}`);
     document.querySelector('.'+classTarget).appendChild(newDiv);
+}
+const changeColor = function(event){
+    document.querySelector('.'+event.target.classList[1]).style.backgroundColor="red"
 }
 gridCreator(16,'grid');

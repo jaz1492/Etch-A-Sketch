@@ -35,6 +35,18 @@ const randomColor = function(){
     }
     return `rgb(${numList.join(',')})`
 }
+const changeCanvasSize= function(){
+    let size = parseInt(prompt("how many blocks high and wide do you want your canvas to be? please select a number from 2-100"));
+    while(size > 100 || size < 2 || isNaN(size)){
+        size = parseInt(prompt("please choose a number from 2 - 100"))
+    }
+    //use a for decremental for loop to remove the last child to prevent early loop break
+    const childList = grid.children.length;
+    for(let i = childList-1; i>=0;i--){
+        grid.children[i].remove();
+    }
+    gridCreator(size);
+}
 const gridCreator = function(numOfBoxes,classTarget){
     for(let i = 0; i<numOfBoxes;i++){
         const newCol = document.createElement('div');

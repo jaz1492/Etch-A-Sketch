@@ -6,7 +6,6 @@ body{
     width: 80%;
     height: 90vh;
     margin: 0 auto;
-    border: 1px solid red;
 }
 .tools-container{
     flex-flow: column;
@@ -22,6 +21,9 @@ body{
 }
 .description > ul > li{
     margin: 3em 0;
+}
+.canvas-btn{
+    margin: 5px auto;
 }
 .color-palette{
     margin: 0 auto;
@@ -55,7 +57,7 @@ body{
     max-height: 50vw;
     max-width: 50vw;
     flex: 1 0 auto;
-    border: 1px solid blue;
+    border: 1px solid black;
 }
 
 .flex{
@@ -65,8 +67,8 @@ body{
     aspect-ratio: 1/1;
     flex: 1 1 auto;
     border: 1px solid black;
-    min-height: 20px;
-    min-width: 20px;
+    min-height: 2px;
+    min-width: 2px;
     padding: 0;
     margin: 0;
 }

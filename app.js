@@ -25,7 +25,16 @@
 const grid = document.querySelector('.grid');
 const paletteBtnList = document.querySelectorAll('.palette-btn');
 const currentColor = document.querySelector('.current-color');
-
+let gradientOn = false;
+let rainbowOn = false;
+//generate 3 random numbers from 0-255 to get a value for the rgb
+const randomColor = function(){
+    const numList =[];
+    for(let i =0;i<3;i++){
+        numList.push(parseInt(Math.floor(Math.random()*255)))
+    }
+    return `rgb(${numList.join(',')})`
+}
 const gridCreator = function(numOfBoxes,classTarget){
     for(let i = 0; i<numOfBoxes;i++){
         const newCol = document.createElement('div');
@@ -46,10 +55,27 @@ const createBox = function(str='0',classTarget){
 }
 const setColor = function(event){
     const targetColor = event.target.classList[1];
-    currentColor.style.backgroundColor=targetColor
+    if(targetColor === 'gradient'){
+        rainbowOn = false;
+        return gradientOn = true;
+    }
+    else if(targetColor === 'rainbow'){
+        gradientOn = false;
+        return rainbowOn = true;
+    }
+    else{
+        gradientOn = false;
+        rainbowOn = false;
+        currentColor.style.backgroundColor=targetColor
+    }
 }
 const changeColor = function(event){
-    document.querySelector('.'+event.target.classList[1]).style.backgroundColor=currentColor.style.backgroundColor
+    const targetBlock = document.querySelector('.'+event.target.classList[1]);
+    if(gradientOn){}
+    else if(rainbowOn){
+        targetBlock.style.backgroundColor = randomColor()
+    }
+    else{targetBlock.style.backgroundColor=currentColor.style.backgroundColor}
 }
 const resetColor = function(){
     document.querySelectorAll('.grid-block').forEach((block)=>block.style.backgroundColor="white")

@@ -27,6 +27,8 @@ const paletteBtnList = document.querySelectorAll('.palette-btn');
 const currentColor = document.querySelector('.current-color');
 let gradientOn = false;
 let rainbowOn = false;
+let gradientColor = [255,255,255]
+
 //generate 3 random numbers from 0-255 to get a value for the rgb
 const randomColor = function(){
     const numList =[];
@@ -34,6 +36,16 @@ const randomColor = function(){
         numList.push(parseInt(Math.floor(Math.random()*255)))
     }
     return `rgb(${numList.join(',')})`
+}
+const gradient = function(arr){
+    let newColor = arr.map((x)=>{
+        if (x>=0){
+            return x-25 === 0? 0 : x-25
+        }
+        return 0;
+     })
+     gradientColor = newColor
+    return `rgb(${newColor.join(',')})`
 }
 const changeCanvasSize= function(){
     let size = parseInt(prompt("how many blocks high and wide do you want your canvas to be? please select a number from 2-100"));
@@ -71,6 +83,7 @@ const setColor = function(event){
         currentColor.style.backgroundColor='';
         currentColor.style.background='linear-gradient(to left, white,grey,black)';
         rainbowOn = false;
+        gradientColor = [255,255,255];
         return gradientOn = true;
     }
     else if(targetColor === 'rainbow'){
@@ -89,7 +102,9 @@ const setColor = function(event){
 }
 const changeColor = function(event){
     const targetBlock = document.querySelector('.'+event.target.classList[1]);
-    if(gradientOn){}
+    if(gradientOn){
+        targetBlock.style.backgroundColor = gradient(gradientColor)
+    }
     else if(rainbowOn){
         targetBlock.style.backgroundColor = randomColor()
     }

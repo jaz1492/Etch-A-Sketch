@@ -38,7 +38,7 @@ const randomColor = function(){
 const gridCreator = function(numOfBoxes,classTarget){
     for(let i = 0; i<numOfBoxes;i++){
         const newCol = document.createElement('div');
-        newCol.classList.add(`column-${i.toString()}`);
+        newCol.classList.add(`column-${i.toString()}`,'grid-column','flex');
         grid.appendChild(newCol);
         for(let n = 1; n<=numOfBoxes;n++){
             // multiply the num to current column number then add the current created box to get its unique num 

@@ -9,6 +9,13 @@ body{
 }
 .tools-container{
     flex-flow: column;
+    height: 80vh;
+}
+.color-palette{
+    margin: 0 auto;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
 }
 .palette-container{
     width: 100px;
@@ -16,13 +23,17 @@ body{
     margin: 0 auto;
     flex-wrap: wrap;
 }
-
+.current-color{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
 .grid-creator{
     display: inline;
 }
 .grid{
-    max-height: 380px;
-    max-width: 380px;
+    min-height: 380px;
+    min-width: 380px;
     flex: 1 0 50%;
     border: 1px solid blue;
 }

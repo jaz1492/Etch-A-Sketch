@@ -23,7 +23,8 @@
     -create an erase and reset function
 */
 const grid = document.querySelector('.grid');
-let currentColor = "red"
+const paletteBtnList = document.querySelectorAll('.palette-btn');
+const currentColor = document.querySelector('.current-color');
 
 const gridCreator = function(numOfBoxes,classTarget){
     for(let i = 0; i<numOfBoxes;i++){
@@ -44,9 +45,14 @@ const createBox = function(str='0',classTarget){
     document.querySelector('.'+classTarget).appendChild(newDiv);
 }
 const setColor = function(event){
-    console.log(event);
+    const targetColor = event.target.classList[1];
+    console.log(targetColor);
+    currentColor.style.backgroundColor=targetColor
 }
 const changeColor = function(event){
-    document.querySelector('.'+event.target.classList[1]).style.backgroundColor=currentColor
+    document.querySelector('.'+event.target.classList[1]).style.backgroundColor=currentColor.style.backgroundColor
+}
+for(btn of paletteBtnList){
+    btn.addEventListener("click",setColor)
 }
 gridCreator(16,'grid');

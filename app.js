@@ -46,11 +46,13 @@ const createBox = function(str='0',classTarget){
 }
 const setColor = function(event){
     const targetColor = event.target.classList[1];
-    console.log(targetColor);
     currentColor.style.backgroundColor=targetColor
 }
 const changeColor = function(event){
     document.querySelector('.'+event.target.classList[1]).style.backgroundColor=currentColor.style.backgroundColor
+}
+const resetColor = function(){
+    document.querySelectorAll('.grid-block').forEach((block)=>block.style.backgroundColor="white")
 }
 for(btn of paletteBtnList){
     btn.addEventListener("click",setColor)

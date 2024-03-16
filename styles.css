@@ -11,6 +11,13 @@ body{
     flex-flow: column;
     height: 80vh;
 }
+.description{
+    margin: 0 auto;
+    width: 80%;
+}
+.description > ul{
+    text-align: left;
+}
 .color-palette{
     margin: 0 auto;
     width: 300px;
@@ -24,9 +31,14 @@ body{
     flex-wrap: wrap;
 }
 .current-color{
+    margin: 0 auto;
     border: 1px solid black;
     width: 50px;
     height: 50px;
+}
+.clear-btn{
+    margin: 50px auto 0 auto;
+    width: 50px;
 }
 .grid-creator{
     display: inline;
@@ -52,7 +64,13 @@ body{
     width: 100%;
 }
 .palette-btn{
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
     margin: 4px;
+}
+.palette-btn:hover{
+    cursor:pointer ;
 }
 footer{
     background-color: #0b6e4f;

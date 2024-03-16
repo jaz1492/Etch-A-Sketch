@@ -13,7 +13,13 @@
     <section class="tools-container flex">
         <div class="description">
             <h3>How to use:</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos consectetur quis velit ipsa et quibusdam, nesciunt sunt doloremque repellat est culpa accusamus, sed quos, numquam voluptate ipsam itaque cumque. Magni?</p>
+            <ul>
+            <li>Select one of the colors from the palette and hover over the grid to paint.</li>
+            <li> Select the rainbow color for a random color on each block.</li>
+            <li> Select gradient for progressively darker color for each block.</li>
+            <li> Press the clear button to clear the canvas.</li>
+            <li> Have fun! :) </li>
+            </ul>
         </div>
         <form action="" class="grid-creator">
                 <input type="range">
@@ -22,24 +28,26 @@
         <h3>colors</h3>
         <div class="color-palette flex">
             <div class="palette-container flex">
-                <div class="palette-btn red grid-block" style="background-color: red;"></div>
-                <div class="palette-btn blue grid-block" style="background-color: blue;"></div>
-                <div class="palette-btn yellow grid-block" style="background-color: yellow;"></div>
-                <div class="palette-btn purple grid-block" style="background-color: purple;"></div>
-                <div class="palette-btn green grid-block" style="background-color: green"></div>
-                <div class="palette-btn orange grid-block" style="background-color: orange;"></div>
-                <div class="palette-btn brown grid-block" style="background-color: brown;"></div>
-                <div class="palette-btn black grid-block" style="background-color: black;"></div>
-                <div class="palette-btn cyan grid-block" style="background-color: cyan;"></div>
-                <div class="palette-btn white grid-block" style="background-color: white;"></div>
-                <div class="palette-btn gradient grid-block"></div>
-                <div class="palette-btn rainbow grid-block"></div>
+                <div class="palette-btn red" style="background-color: red;"></div>
+                <div class="palette-btn blue" style="background-color: blue;"></div>
+                <div class="palette-btn yellow" style="background-color: yellow;"></div>
+                <div class="palette-btn purple" style="background-color: purple;"></div>
+                <div class="palette-btn green" style="background-color: green"></div>
+                <div class="palette-btn orange" style="background-color: orange;"></div>
+                <div class="palette-btn brown" style="background-color: brown;"></div>
+                <div class="palette-btn black" style="background-color: black;"></div>
+                <div class="palette-btn cyan" style="background-color: cyan;"></div>
+                <div class="palette-btn white" style="background-color: white;"></div>
+                <div class="palette-btn gradient"></div>
+                <div class="palette-btn rainbow"></div>
             </div>
         <div class="current-color-container">    
-            <label for="current-color">Current Color: </label>
+            <p>Current Color:</p>
             <div class="current-color" style="background-color: red;"></div>
         </div>
+        
     </div>
+    <button onclick=resetColor() class="clear-btn">Clear</button>
     </section>
     <section class="grid flex"></section>
 </section>

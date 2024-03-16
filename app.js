@@ -56,16 +56,22 @@ const createBox = function(str='0',classTarget){
 const setColor = function(event){
     const targetColor = event.target.classList[1];
     if(targetColor === 'gradient'){
+        currentColor.style.backgroundColor='';
+        currentColor.style.background='linear-gradient(to left, white,grey,black)';
         rainbowOn = false;
         return gradientOn = true;
     }
     else if(targetColor === 'rainbow'){
+        currentColor.style.backgroundColor='';
+        currentColor.style.background='linear-gradient(to right, red,yellow,blue,purple)';
         gradientOn = false;
         return rainbowOn = true;
+
     }
     else{
         gradientOn = false;
         rainbowOn = false;
+        currentColor.style.background='';
         currentColor.style.backgroundColor=targetColor
     }
 }

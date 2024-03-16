@@ -18,6 +18,9 @@ body{
 .description > ul{
     text-align: left;
 }
+.description > ul > li{
+    margin: 3em 0;
+}
 .color-palette{
     margin: 0 auto;
     width: 300px;
@@ -46,7 +49,7 @@ body{
 .grid{
     min-height: 380px;
     min-width: 380px;
-    flex: 1 0 50%;
+    flex: 1 0 70%;
     border: 1px solid blue;
 }
 
